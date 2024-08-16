@@ -1,0 +1,98 @@
+$(document).ready( () => {
+  
+  if ( localStorage.getItem('theme') ) {
+    $('body').attr('data-bs-theme', localStorage.getItem('theme'))
+  }
+  
+  $('.light').click( () => {
+    $('body').attr('data-bs-theme', 'light')
+    localStorage.setItem('theme', 'light')
+  })
+  
+  $('.dark').click( () => {
+    $('body').attr('data-bs-theme', 'dark')
+    localStorage.setItem('theme', 'dark')
+  })
+  
+  const delElm = (elm) => $(elm).css('display', 'none'),
+  flxElm = (elm) => $(elm).css('display', 'flex'),
+  inlElm = (elm) => $(elm).css('display', 'inline'),
+  enbInpt = (param) => {
+    delElm(`${ param } .tPN`)
+    flxElm(`${ param } .tPI`)
+  },
+  dsbInpt = (param) => {
+    flxElm(`${ param } .tPN`)
+    delElm(`${ param } .tPI`)
+  }
+  
+  const conf = (param) => {
+    const savVal = document.querySelector(`${ param } input`).value,
+    
+    aftSav = (lSparam) => {
+      localStorage.setItem(lSparam, savVal)
+      dsbInpt(param)
+      delElm(`${ param } .gpii`)
+      inlElm(`${ param } .gpi`)
+    }
+
+    if ( param == '.tBid' ) {
+      aftSav('tbid')
+    }
+    
+    if ( param == '.tCid' ) {
+      aftSav('tcid')
+    }
+    
+  }
+  
+  const cancel = (param, gpo) => {
+    dsbInpt(param)
+    inlElm(`${ param } ${ gpo }`)
+    delElm(`${ param } .gpii`)
+  }
+  
+  const edit = (param) => {
+    enbInpt(param)
+    delElm(`${ param } .gpi`)
+    inlElm(`${ param } .gpii`)
+    delElm(`${ param } .gpx`)
+    
+    $('.tBid .no').click( () => cancel('.tBid', '.gpx') )
+    $('.tCid .no').click( () => cancel('.tCid') )
+    
+    const inpt = document.querySelector(`${ param } .inpt`)
+    
+    if ( param == '.tBid' ) {
+      inpt.value = localStorage.getItem('tbid')
+    }
+    
+    if ( param == '.tCid' ) {
+      inpt.value = localStorage.getItem('tcid')
+    }
+    
+    
+    $(`${ param } .inpt`).focus()
+  }
+  
+  const elim = (param) => {
+    const adv = document.querySelector(`${ param } .tPN`)
+    
+    inlElm('.gpii')
+    delElm('.gpx')
+    
+    adv.innerHTML = `<i class="bi bi-trash"></i>
+    <p>¿Eliminar?</p>`
+    //alert(adv)
+  }
+  
+  $('.tBid .ed').click( () => edit('.tBid') )
+  $('.tCid .ed').click( () => edit('.tCid') )
+  
+  $('.tBid .add').click( () => elim('.tBid') )
+  $('.tCid .add').click( () => edit('.tCid') )
+  
+  $('.tBid .ok').click( () => conf('.tBid') )
+  $('.tCid .ok').click( () => conf('.tCid') )
+  
+})
