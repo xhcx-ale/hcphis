@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+
+$primColor: rgba(#1E4858,.3);
+$secnColor: rgba(#000, .3);
+
+body {
+  background: url('../img/peakpx (1).jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  p, h1, h2, h3, h4, h5, h6, img {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .inv {
+    display: none;
+  }
+  
+  .barraNav {
+    background: $primColor;
+    backdrop-filter: blur(3px);
+    .kyf {
+      font-family: Creepster,system-ui;
+    }
+    .navOpts {
+      a {
+        padding: 5px;
+      }
+    }
+  }
+  
+  .main {
+    align-content: center;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    .iniciador {
+     // display: none;
+     margin: 0 5px;
+      .cardInic {
+        backdrop-filter: blur(5px);
+        background: transparent;
+        .cardHead {
+          padding: 20px 0;
+          img {
+            width: 25%;
+          }
+        }
+        .cardBody {
+          .mainAct {
+            .options {
+              align-content: center;
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              .btnOpt {
+                border: none;
+                color: #fff;
+                font-weight: bold;
+                padding: 15px 0;
+                width: 50%;
+              }
+              .btnInt {
+                background: $secnColor;
+                //border: 2px solid $primColor;
+                border-right: 0;
+                border-radius: 0 0 0 5px;
+               // color: $primColor;
+              }
+              .btnTest {
+                backdrop-filter: blur(0px);
+                background: $primColor;
+                //border: 2px solid $secnColor;
+                border-left: 0;
+                border-radius: 0 0 5px 0;
+                //color: $secnColor;
+              }
+            }
+          }
+        }
+      }
+    }
+    .mainApp {
+      margin-top: 70px;
+      min-height: 100vh;
+      width: 100%;
+      .tlgrParams {
+        align-items: center;
+        backdrop-filter: blur(3px);
+       // background: rgba(#1E4858,.400);
+        background: transparent;
+        border: 0px solid $primColor;
+        box-shadow: 0 3px 3px 0 $secnColor;
+        display: flex;
+        font-family: Inconsolata, system-ui;
+        justify-content: center;
+        margin: 0 5px;
+        padding: 20px 10px;
+        .validated {
+          color: rgba(55,255,155,1);
+        }
+        .tlgrParam {
+          align-content: center;
+          border: 1px solid $primColor;
+          border-radius: 35px;
+          box-shadow: 0 2px 2px 0 $primColor; //rgba(90, 116, 148, 0.3);
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 20px;
+          width: 100%;
+          .tParamName, .tPA {
+            align-content: center;
+            display: flex;
+            justify-content: center;
+            i {
+              font-size: 2rem;
+              margin-right: 10px;
+            }
+            .botIcn {
+              color: rgba(149,149,149,1);
+            }
+            .chtIcn {
+              color: rgba(36,161,222,1);
+            }
+            p {
+              align-self: center;
+            }
+          }
+          .tParamInpt {
+            align-self: center;
+            width: 60%;
+            .inpt {
+              background: transparent;
+              border: 0;
+              border-bottom: 1px solid #fff;
+              border-radius: 0;
+              color: rgba(209,210,255,1);
+              outline: none;
+              padding: 0;
+              width: 100%;
+            }
+          }
+        }
+        .tParamsBtns {
+          align-self: center;
+          button {
+            background: transparent;
+            border: none;
+            padding: 15px;
+          }
+          .add {
+           // color: rgba(50,139,255,1);
+           color: rgba(165,255,68,1);
+          }
+          .ok {
+            color: rgba(55,255,155,1);
+          }
+          .no {
+            color: rgba(255,78,114,1);
+          }
+          .ed {
+            color: rgba(255,171,104,1);
+          }
+          .el {
+            color: rgba(255,31,60,1);
+          }
+        }
+        .cntTest {
+          align-items: center;
+          border: none;
+          border-radius: 5px;
+          
+          display: flex;
+          justify-content: center;
+          padding: 15px 0;
+          width: 200px;
+          p {
+            //align-self: center;
+            line-height: 0;
+          }
+          i {
+           // align-self: center;
+           color: rgba(55,255,155,1);
+            font-size: 1.5rem;
+            line-height: 0;
+          }
+        }
+      }
+      .templ {
+        margin: 0 5px;
+        .templCard {
+          backdrop-filter: blur(5px);
+          background: transparent;
+          border-radius: 5px 5px 0 0;
+          box-shadow: 0 3px 3px 0 $secnColor;
+        }
+        .templCont {
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          width: 100%;
+          .item {
+            padding: 10px;
+            text-align: center;
+            width: 30%;
+            i {
+              font-size: 2rem;
+            }
+            .by {
+              font-size: .7rem;
+            }
+          }
+        }
+        .cUP {
+            display: flex;
+        }
+        .cDWN {
+          border-top: 1px solid $secnColor;
+        }
+        .mdl {
+          .mdlBody {
+           width: 100%;
+          }
+          .vwCont {
+            align-content: center;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center ;
+           width: 100%;
+            .about {
+              align-items: center;
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .fot {
+    backdrop-filter: blur(3px);
+    background: $primColor;
+  }
+  
+}
