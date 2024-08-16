@@ -1,0 +1,211 @@
+$(document).ready( () => {
+  const svdTbid = localStorage.getItem('tbid'),
+    svdTcid = localStorage.getItem('tcid')
+  
+  if ( localStorage.getItem('theme') ) {
+    $('body').attr('data-bs-theme', localStorage.getItem('theme'))
+  }
+  
+  $('.light').click( () => {
+    $('body').attr('data-bs-theme', 'light')
+    localStorage.setItem('theme', 'light')
+  })
+  
+  $('.dark').click( () => {
+    $('body').attr('data-bs-theme', 'dark')
+    localStorage.setItem('theme', 'dark')
+  })
+  
+  const delElm = (elm) => $(elm).css('display', 'none'),
+  flxElm = (elm) => $(elm).css('display', 'flex'),
+  inlElm = (elm) => $(elm).css('display', 'inline'),
+  enbInpt = (param) => {
+    delElm(`${ param } .tPA`)
+    delElm(`${ param } .tPN`)
+    flxElm(`${ param } .tPI`)
+  },
+  dsbInpt = (param) => {
+    delElm(`${param} .tPA`)
+    delElm(`${ param } .tPI`)
+    flxElm(`${ param } .tPN`)
+  }
+  
+  const paramWrite = (param) => {
+    enbInpt(param)
+    delElm(`${param} .gpx`)
+    delElm(`${param} .gpi`)
+    inlElm(`${param} .gpii`)
+  }
+  
+  const shwGpoX = (param) => {
+    delElm(`${param} .gpii`)
+    delElm(`${param} .gpi`)
+    inlElm(`${param} .gpx`)
+  }
+  
+  const shwGpoI = (param) => {
+    delElm(`${param} .gpx`)
+    delElm(`${param} .gpii`)
+    inlElm(`${param} .gpi`)
+  }
+  
+  const shwGpoII = (param) => {
+    delElm(`${param} .gpx`)
+    delElm(`${param} .gpi`)
+    inlElm(`${param} .gpii`)
+  }
+  
+  const shwDefault = (param) => {
+    $(`${param} .tPA`).removeClass('active')
+    delElm(`${param} .tPA`)
+    shwGpoX(param)
+    dsbInpt(param)
+  }
+  
+  const shwOnWrit = (param) => {
+    $(`${param} .tPA`).removeClass('active')
+    enbInpt(param)
+    delElm(`${param} .tPA`)
+    delElm(`${param} .tPN`)
+    shwGpoII(param)
+    if (param == '.tBid') {
+      document.querySelector(`${param} .inpt`).value = localStorage.getItem('tbid')
+    } else {
+      document.querySelector(`${param} .inpt`).value = localStorage.getItem('tcid')
+    }
+    
+    $(`${param} .inpt`).focus()
+  }
+  
+  const shwSaved = (param) => {
+    $(`${param} .tPA`).removeClass('active')
+    dsbInpt(param)
+    shwGpoI(param)
+  }
+  
+  const shwOnDelete = (param) => {
+    document.querySelector(`${param} .inpt`).value = ''
+    dsbInpt(param)
+    flxElm(`${param} .tPA`)
+    delElm(`${param} .tPN`)
+    shwGpoII(param)
+    $(`${param} .tPA`).addClass('active')
+  }
+  
+  const vldtn = (param) => {
+    if (document.querySelector(`${param} .inpt`).value) {
+      return true
+    }
+  }
+  
+  const saveParam = (param) => {
+    const paramInpt = document.querySelector(`${param} .inpt`)
+    
+    if (param == '.tBid') {
+      localStorage.setItem('tbid', paramInpt.value)
+    } else {
+      localStorage.setItem('tcid', paramInpt.value)
+    }
+  }
+  
+  const deleteParam = (param) => {
+    if (param == '.tBid') {
+      localStorage.setItem('tbid', '')
+    } else {
+      localStorage.setItem('tcid', '')
+    }
+  }
+  
+  const accept = (param) => {
+    if (param == '.tBid') {
+      if (vldtn(param)) {
+        saveParam(param)
+        shwSaved(param)
+      } else if ($(`${param} .tPA`).hasClass('active')) {
+        deleteParam(param)
+        shwDefault(param)
+      }
+    } else if (param == '.tCid') {
+      if (vldtn(param)) {
+        saveParam(param)
+        shwSaved(param)
+      } else if ($(`${param} .tPA`).hasClass('active')) {
+        deleteParam(param)
+        shwDefault(param)
+      }
+    }
+  }
+  
+  const cancel = (param) => {
+    
+    if (param == '.tBid') {
+      if (localStorage.getItem('tbid')) {
+        shwSaved(param)
+      } else {
+        shwDefault(param)
+      }
+    } else if (param == '.tCid') {
+      if (localStorage.getItem('tcid')) {
+        shwSaved(param)
+      } else {
+        shwDefault(param)
+      }
+    }
+    
+    
+  }
+  
+  const btnActs = (param) => {
+    const btns = document.querySelectorAll(`${param} button`)
+    
+    btns.forEach( (btn) => {
+      $(btn).on( 'click', () => {
+        const btnClass = btn.classList.toString()
+        //alert(btn.classList.toString())
+        /*
+        if (btn.classList.contains('add')) {
+        alert('si')
+        }*/
+        
+        switch (btnClass) {
+          case 'add gpx':
+            shwOnWrit(param)
+            break;
+            case 'ed gpi':
+              shwOnWrit(param)
+              break;
+              case 'el gpi':
+                shwOnDelete(param)
+                break;
+                case 'ok gpii':
+                  accept(param)
+                  break;
+                  case 'no gpii':
+                    cancel(param)
+                    break;
+        }
+        
+      })
+    })
+  }
+  
+  if (svdTbid) {
+    shwSaved('.tBid')
+  } else {
+    shwDefault('.tBid')
+  }
+  
+  if (svdTcid) {
+    shwSaved('.tCid')
+  } else {
+    shwDefault('.tCid')
+  }
+  
+  btnActs('.tBid')
+  btnActs('.tCid')
+  
+  
+  
+  
+  
+})
