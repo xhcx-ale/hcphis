@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/peakpx (1).jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body p, body h1, body h2, body h3, body h4, body h5, body h6, body img {
+  margin: 0;
+  padding: 0;
+}
+body .inv {
+  display: none;
+}
+body .barraNav {
+  background: rgba(30, 72, 88, 0.3);
+  backdrop-filter: blur(3px);
+}
+body .barraNav .kyf {
+  font-family: Creepster, system-ui;
+}
+body .barraNav .navOpts a {
+  padding: 5px;
+}
+body .main {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+body .main .iniciador {
+  margin: 0 5px;
+}
+body .main .iniciador .cardInic {
+  backdrop-filter: blur(5px);
+  background: transparent;
+}
+body .main .iniciador .cardInic .cardHead {
+  padding: 20px 0;
+}
+body .main .iniciador .cardInic .cardHead img {
+  width: 25%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnOpt {
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 0;
+  width: 50%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnInt {
+  background: rgba(0, 0, 0, 0.3);
+  border-right: 0;
+  border-radius: 0 0 0 5px;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnTest {
+  backdrop-filter: blur(0px);
+  background: rgba(30, 72, 88, 0.3);
+  border-left: 0;
+  border-radius: 0 0 5px 0;
+}
+body .main .mainApp {
+  margin-top: 70px;
+  min-height: 100vh;
+  width: 100%;
+}
+body .main .mainApp .tlgrParams {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background: transparent;
+  border: 0px solid rgba(30, 72, 88, 0.3);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  font-family: Inconsolata, system-ui;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 20px 10px;
+}
+body .main .mainApp .tlgrParams .validated {
+  color: rgb(55, 255, 155);
+}
+body .main .mainApp .tlgrParams .tlgrParam {
+  align-content: center;
+  border: 1px solid rgba(30, 72, 88, 0.3);
+  border-radius: 35px;
+  box-shadow: 0 2px 2px 0 rgba(30, 72, 88, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName, body .main .mainApp .tlgrParams .tlgrParam .tPA {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName i, body .main .mainApp .tlgrParams .tlgrParam .tPA i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName .botIcn, body .main .mainApp .tlgrParams .tlgrParam .tPA .botIcn {
+  color: rgb(149, 149, 149);
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName .chtIcn, body .main .mainApp .tlgrParams .tlgrParam .tPA .chtIcn {
+  color: rgb(36, 161, 222);
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName p, body .main .mainApp .tlgrParams .tlgrParam .tPA p {
+  align-self: center;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamInpt {
+  align-self: center;
+  width: 60%;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamInpt .inpt {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  color: rgb(209, 210, 255);
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+body .main .mainApp .tlgrParams .tParamsBtns {
+  align-self: center;
+}
+body .main .mainApp .tlgrParams .tParamsBtns button {
+  background: transparent;
+  border: none;
+  padding: 15px;
+}
+body .main .mainApp .tlgrParams .tParamsBtns .add {
+  color: rgb(165, 255, 68);
+}
+body .main .mainApp .tlgrParams .tParamsBtns .ok {
+  color: rgb(55, 255, 155);
+}
+body .main .mainApp .tlgrParams .tParamsBtns .no {
+  color: rgb(255, 78, 114);
+}
+body .main .mainApp .tlgrParams .tParamsBtns .ed {
+  color: rgb(255, 171, 104);
+}
+body .main .mainApp .tlgrParams .tParamsBtns .el {
+  color: rgb(255, 31, 60);
+}
+body .main .mainApp .tlgrParams .cntTest {
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  width: 200px;
+}
+body .main .mainApp .tlgrParams .cntTest p {
+  line-height: 0;
+}
+body .main .mainApp .tlgrParams .cntTest i {
+  color: rgb(55, 255, 155);
+  font-size: 1.5rem;
+  line-height: 0;
+}
+body .main .mainApp .templ {
+  margin: 0 5px;
+}
+body .main .mainApp .templ .templCard {
+  backdrop-filter: blur(5px);
+  background: transparent;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+body .main .mainApp .templ .templCont {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+body .main .mainApp .templ .templCont .item {
+  padding: 10px;
+  text-align: center;
+  width: 30%;
+}
+body .main .mainApp .templ .templCont .item i {
+  font-size: 2rem;
+}
+body .main .mainApp .templ .templCont .item .by {
+  font-size: 0.7rem;
+}
+body .main .mainApp .templ .cUP {
+  display: flex;
+}
+body .main .mainApp .templ .cDWN {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+body .main .mainApp .templ .mdl .mdlBody {
+  width: 100%;
+}
+body .main .mainApp .templ .mdl .vwCont {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+body .main .mainApp .templ .mdl .vwCont .about {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+body .fot {
+  backdrop-filter: blur(3px);
+  background: rgba(30, 72, 88, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map */
