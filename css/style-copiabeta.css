@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body p, body h1, body h2, body h3, body h4, body h5, body h6, body img {
+  margin: 0;
+  padding: 0;
+}
+body .inv {
+  display: none;
+}
+body .barraNav .navOpts a {
+  padding: 5px;
+}
+body .main {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+body .main .iniciador {
+  display: none;
+}
+body .main .iniciador .cardInic .cardHead {
+  padding: 20px 0;
+}
+body .main .iniciador .cardInic .cardHead img {
+  width: 25%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnOpt {
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 0;
+  width: 50%;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnInt {
+  background: #000;
+  border-right: 0;
+  border-radius: 0 0 0 5px;
+  color: #9D00FF;
+}
+body .main .iniciador .cardInic .cardBody .mainAct .options .btnTest {
+  background: #9D00FF;
+  border-left: 0;
+  border-radius: 0 0 5px 0;
+  color: #000;
+}
+body .main .mainApp {
+  margin-top: 70px;
+  min-height: 100vh;
+  width: 100%;
+}
+body .main .mainApp .tlgrParams .tlgrParam {
+  align-content: center;
+  border: 1px solid #fff;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamName p {
+  align-self: center;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamInpt {
+  align-self: center;
+}
+body .main .mainApp .tlgrParams .tlgrParam .tParamInpt .inpt {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+}
+body .main .mainApp .tlgrParams .tParamsBtns {
+  align-self: center;
+}
+body .main .mainApp .tlgrParams .tParamsBtns button {
+  background: transparent;
+  border: none;
+  padding: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */
